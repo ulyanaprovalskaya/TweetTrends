@@ -1,0 +1,32 @@
+﻿<Window x:Class="TweetTrends.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:gmaps="clr-namespace:GMap.NET.WindowsForms;assembly=GMap.NET.WindowsForms"
+        xmlns:local="clr-namespace:TweetTrends"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100px" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <WindowsFormsHost Grid.Column="1">
+            <gmaps:GMapControl x:Name="mapView" Load="mapView_Load"/>
+        </WindowsFormsHost>
+        <ComboBox Grid.Column="0" Name="tweetsTopic_ComboBox" SelectionChanged="tweetsTopic_ComboBox_SelectionChanged" Height="40px">
+            <ComboBoxItem Content="Cali" IsSelected="True" />
+            <ComboBoxItem Content="Family"/>
+            <ComboBoxItem Content="Football"/>
+            <ComboBoxItem Content="High school"/>
+            <ComboBoxItem Content="Movie"/>
+            <ComboBoxItem Content="Shopping"/>
+            <ComboBoxItem Content="Snow"/>
+            <ComboBoxItem Content="Texas"/>
+            <ComboBoxItem Content="Weekend"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
